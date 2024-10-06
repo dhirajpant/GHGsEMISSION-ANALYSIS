@@ -3,96 +3,65 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load the dataset
+df = pd.read_csv('CO2 emission by countries.csv', encoding='latin1')
+
 def run_analysis():
-    # Load the dataset
-    file_path = 'new_CIT-2023-ch4-upwind-1-hour-20240513.csv'  # Adjust the path as needed
-    data = pd.read_csv(file_path)
-
-    # Convert 'datetime_UTC' to datetime format
-    data['datetime_UTC'] = pd.to_datetime(data['datetime_UTC'])
-
-    # -------------------------------------
-    # 1. Trend Analysis Over Time
-    st.subheader("Trend Analysis Over Time")
-    plt.figure(figsize=(14, 6))
-    plt.plot(data['datetime_UTC'], data['ch4_ppb'], color='blue', label='CH₄ Levels (ppb)')
-    plt.title('Trend of CH₄ Levels in 2023')
-    plt.xlabel('Date')
-    plt.ylabel('CH₄ Levels (ppb)')
-    plt.xticks(rotation=45)
-    plt.legend()
-    st.pyplot(plt)
-
-    # -------------------------------------
-    # 2. Diurnal Patterns (Hourly Variations)
-    st.subheader("Diurnal Patterns (Hourly Variations)")
-    data['hour'] = data['datetime_UTC'].dt.hour  # Extract hour from datetime
-    hourly_means = data.groupby('hour')['ch4_ppb'].mean()  # Calculate hourly mean
+    # Set up the plot for cumulative CO2 emissions over time
     plt.figure(figsize=(10, 5))
-    plt.plot(hourly_means.index, hourly_means.values, marker='o', color='orange')
-    plt.title('Average CH₄ Levels by Hour')
-    plt.xlabel('Hour of Day')
-    plt.ylabel('Average CH₄ Levels (ppb)')
-    plt.xticks(hourly_means.index)
-    st.pyplot(plt)
+    df.groupby('Year')['CO2 emission (Tons)'].sum().plot()
+    plt.title("Cumulative CO2 Emissions Over Time")
+    plt.xlabel("Year")
+    plt.ylabel("CO2 Emissions (Tons)")
+    
+    # Display the first plot in Streamlit
+    st.pyplot(plt.gcf())
+    
+    # Write analysis text
+    st.write("""
+        We can see that cumulative CO2 emissions increased rapidly. According to the United States Environmental Protection Agency:
 
-    # -------------------------------------
-    # 3. Day of Week / Month Analysis
-    st.subheader("Day of Week Analysis")
-    data['day_of_week'] = data['datetime_UTC'].dt.day_name()  # Extract day of week
-    weekly_means = data.groupby('day_of_week')['ch4_ppb'].mean()  # Calculate mean by day
-    order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        "Global carbon emissions from fossil fuels have significantly increased since 1900. Since 1970, CO2 emissions have increased by about 90%, 
+        with emissions from fossil fuel combustion and industrial processes contributing about 78% of the total greenhouse gas emissions increase from 1970 to 2011.
+        Agriculture, deforestation, and other land-use changes have been the second-largest contributors. 
+        Emissions of non-CO2 greenhouse gases have also increased significantly since 1900."
+    """)
+
+    # Set up the bar plot for top CO2-emitting countries in 2020
     plt.figure(figsize=(10, 5))
-    sns.barplot(x=weekly_means.index, y=weekly_means.values, order=order, palette='pastel')
-    plt.title('Average CH₄ Levels by Day of Week')
-    plt.xlabel('Day of Week')
-    plt.ylabel('Average CH₄ Levels (ppb)')
-    st.pyplot(plt)
+    top_emitters_2020 = df[df['Year'] == 2020].sort_values(by='CO2 emission (Tons)', ascending=False).head(30)
+    sns.barplot(x='Country', y='CO2 emission (Tons)', data=top_emitters_2020)
+    plt.xticks(rotation=90)
+    plt.title("Top 30 CO2 Emitting Countries in 2020")
+    plt.xlabel("Country")
+    plt.ylabel("CO2 Emissions (Tons)")
 
-    # Monthly Analysis
-    data['month'] = data['datetime_UTC'].dt.month_name()  # Extract month name
-    monthly_means = data.groupby('month')['ch4_ppb'].mean()  # Calculate mean by month
-    plt.figure(figsize=(10, 5))
-    monthly_means = monthly_means.reindex(['January', 'February', 'March', 'April', 'May', 
-                                            'June', 'July', 'August', 'September', 
-                                            'October', 'November', 'December'])  # Order months
-    sns.barplot(x=monthly_means.index, y=monthly_means.values, palette='pastel')
-    plt.title('Average CH₄ Levels by Month')
-    plt.xlabel('Month')
-    plt.ylabel('Average CH₄ Levels (ppb)')
-    plt.xticks(rotation=45)
-    st.pyplot(plt)
+    # Display the second plot in Streamlit
+    st.pyplot(plt.gcf())
+    
+    # Write the conclusion for the top emitters
+    st.write("""
+        The United States and China stand out as the largest emitters. The top 5 countries have a significant influence and impact on global emissions.
+        These top 5 countries contribute approximately 57% of the global cumulative CO2 emissions.
+    """)
 
-    # -------------------------------------
-    # 4. Distribution of Methane Concentration
-    st.subheader("Distribution of Methane Concentration")
-    plt.figure(figsize=(8, 5))
-    plt.hist(data['ch4_ppb'], bins=30, color='purple', alpha=0.7)
-    plt.title('Histogram of CH₄ Levels (ppb)')
-    plt.xlabel('CH₄ Levels (ppb)')
-    plt.ylabel('Frequency')
-    st.pyplot(plt)
+    # Filter data for the top 5 CO2-emitting countries
+    df_top5 = df[df['Country'].isin(['United States', 'China', 'Russia', 'Germany', 'United Kingdom'])]
 
-    # -------------------------------------
-    # 5. Uncertainty and Variability
-    st.subheader("Uncertainty and Variability")
-    plt.figure(figsize=(10, 5))
-    plt.errorbar(data['datetime_UTC'], data['ch4_ppb'], yerr=data['ch4_uncertainty'], fmt='o', ecolor='red', alpha=0.5)
-    plt.title('CH₄ Levels with Uncertainty')
-    plt.xlabel('Date')
-    plt.ylabel('CH₄ Levels (ppb)')
-    plt.xticks(rotation=45)
-    st.pyplot(plt)
+    # Set up the line plot for top 5 CO2 emitting countries over time
+    plt.figure(figsize=(12, 6))
+    sns.lineplot(x="Year", y="CO2 emission (Tons)", 
+                data=df_top5, hue="Country", style="Country", 
+                markers=True, dashes=False)
+    plt.title("CO₂ Emissions Over Time: Top 5 Countries")
+    plt.xlabel("Year")
+    plt.ylabel("CO2 Emissions (Tons)")
 
-    # -------------------------------------
-    # 6. Correlation Analysis
-    st.subheader("Correlation Analysis")
-    correlation_matrix = data[['ch4_ppb', 'ch4_uncertainty', 'ch4_SD_raw', 'ch4_n_raw']].corr()
-    # Plot heatmap
-    plt.figure(figsize=(10,8))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
-    plt.title('Correlation Heatmap of Methane Data')
-    st.pyplot(plt)  # Change plt.show() to st.pyplot(plt)
+    # Display the third plot in Streamlit
+    st.pyplot(plt.gcf())
+
+    st.write("""Cumulative CO2 emission of United States began to incerese rapidly early 1900s, and that of china began to incerese rapidly late 1900s.
+""")
 
 # Call the function to run the analysis
 if __name__ == "__main__":

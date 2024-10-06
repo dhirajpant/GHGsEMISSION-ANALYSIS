@@ -1,83 +1,79 @@
 import streamlit as st
 
 def show_conclusion():
-    st.header("Conclusions from Methane Analysis")
+    st.header("Conclusions from CO₂ Emissions and Temperature Anomalies Analysis")
 
     st.write("""
-        The analysis of methane (CH₄) levels collected in 2023 from a monitoring station in Pasadena, California, 
-        provides valuable insights into the temporal dynamics and variability of methane concentrations. 
-        This section synthesizes the key findings from the visualizations presented in the Analysis section 
-        and discusses their implications in the context of environmental monitoring and climate change.
+        The analysis of CO₂ emissions and temperature anomalies provides critical insights into the relationship 
+        between human activity and global warming. This section synthesizes the key findings from the Analysis 
+        section and discusses the broader implications for climate policy, sustainability, and the urgent need for action 
+        to mitigate the impact of greenhouse gas emissions.
     """)
 
     # Key Findings
     st.subheader("Key Findings")
     
     st.write("""
-        1. **Trend Analysis**: 
-           The time series analysis revealed a fluctuating trend in CH₄ levels throughout the year. 
-           Peaks in concentration were observed during specific months, suggesting potential seasonal influences 
-           or episodic events contributing to elevated methane emissions. This highlights the importance 
-           of continuous monitoring to identify significant changes in atmospheric methane levels.
+        1. **CO₂ Emissions Trends**: 
+           The global rise in CO₂ emissions has been particularly rapid since 1900, with a significant 90% increase 
+           since 1970, largely driven by fossil fuel combustion and industrial activities. This points to the 
+           ongoing and growing challenge of curbing emissions despite international efforts.
 
-        2. **Diurnal Patterns**: 
-           The analysis of hourly variations indicated pronounced diurnal patterns in methane concentrations. 
-           Average CH₄ levels peaked during specific hours of the day, likely correlating with human activities 
-           such as traffic and industrial operations. Understanding these patterns can inform targeted mitigation strategies 
-           to minimize emissions during peak times.
+        2. **Country Contributions**: 
+           The United States and China stand out as the largest cumulative contributors to CO₂ emissions, 
+           with the top 5 emitting countries contributing approximately 57% of global emissions. This emphasizes 
+           the critical role of these countries in global mitigation efforts.
 
-        3. **Day of Week and Month Variability**: 
-           The analysis by day of the week revealed that CH₄ levels tended to be higher on weekdays compared to weekends. 
-           This finding may reflect increased industrial and vehicular activities during the workweek. Additionally, 
-           the monthly analysis pointed to certain months exhibiting higher average concentrations, 
-           potentially linked to environmental factors such as temperature and precipitation patterns. 
+        3. **Temperature Anomalies**: 
+           The analysis of temperature anomalies reveals that global temperatures have been rising significantly 
+           compared to historical averages. Regions with higher emissions have seen greater temperature deviations, 
+           further solidifying the link between greenhouse gas emissions and global warming.
 
-        4. **Distribution of Methane Concentration**: 
-           The histogram of CH₄ levels illustrated a right-skewed distribution, indicating that while most measurements 
-           are concentrated at lower levels, there are occasional spikes of significantly higher concentrations. 
-           Identifying and understanding the sources of these outliers is crucial for effective emissions management.
+        4. **Regional Disparities**: 
+           While CO₂ emissions and temperature anomalies have risen globally, the impacts are not evenly distributed. 
+           Some regions are experiencing more severe temperature shifts, particularly in the Arctic and mid-latitude regions, 
+           where warming has outpaced the global average.
 
-        5. **Uncertainty and Variability**: 
-           The analysis of measurement uncertainty indicated variability in the data that can influence the interpretation 
-           of CH₄ levels. It is essential to account for these uncertainties in scientific assessments and policy-making, 
-           ensuring that decisions are based on the most reliable data available.
+        5. **Historical Emissions Surge**: 
+           U.S. emissions surged in the early 1900s, coinciding with rapid industrialization, while China's emissions 
+           accelerated in the late 1900s, driven by economic expansion. This underscores the historical responsibility 
+           and the evolving landscape of emissions over time.
 
-        6. **Correlation Analysis**: 
-           The correlation matrix revealed relationships between CH₄ levels and other measured variables. 
-           Understanding these correlations can help identify factors contributing to methane emissions and 
-           guide further research into emission sources and trends.
+        6. **Non-CO₂ Greenhouse Gases**: 
+           Though this analysis focused on CO₂, non-CO₂ gases like methane and nitrous oxide have also contributed 
+           significantly to global warming, and their role should not be underestimated in future policy discussions.
     """)
 
     # Implications and Recommendations
     st.subheader("Implications and Recommendations")
 
     st.write("""
-        The insights gained from this analysis underscore the need for ongoing monitoring and research into methane emissions. 
-        As methane is a potent greenhouse gas with significant implications for climate change, understanding its 
-        atmospheric dynamics is critical. The following recommendations can help improve future monitoring efforts:
+        The findings from this analysis highlight the urgent need for global action to address CO₂ emissions and 
+        limit temperature increases. Several strategies can be employed to mitigate emissions and their impacts:
 
-        - **Enhanced Monitoring**: 
-          Continued and expanded monitoring of methane levels across different locations and times can provide a more 
-          comprehensive understanding of emissions sources and trends. Implementing real-time monitoring systems 
-          could facilitate quicker responses to anomalous spikes in methane concentrations.
+        - **Strengthened International Collaboration**: 
+          Global cooperation is crucial, particularly among the largest emitters. International agreements, such as 
+          the Paris Agreement, must be strengthened, with countries committing to more ambitious emission reduction targets.
 
-        - **Data Integration**: 
-          Integrating methane data with meteorological and traffic data can enhance the analysis, providing insights 
-          into how environmental factors influence CH₄ levels. This integrated approach can improve the accuracy of predictive models.
+        - **Investment in Clean Energy**: 
+          A transition away from fossil fuels toward renewable energy sources like solar, wind, and hydropower is 
+          essential to reduce CO₂ emissions. Investments in green technologies can facilitate this transition 
+          and drive economic growth.
 
-        - **Community Awareness and Engagement**: 
-          Engaging local communities and industries in methane monitoring initiatives can promote awareness of emission sources 
-          and encourage practices that reduce methane emissions. Educational programs can be developed to inform 
-          the public about the impacts of methane on air quality and climate change.
+        - **Carbon Pricing and Emission Reduction Policies**: 
+          Implementing carbon pricing mechanisms, such as carbon taxes or cap-and-trade systems, can incentivize 
+          businesses and industries to lower their emissions. Policy reforms targeting high-emission sectors 
+          like transportation and manufacturing are essential.
 
-        - **Policy Development**: 
-          The findings from methane analyses should inform policymakers in developing regulations aimed at reducing emissions. 
-          Policies that promote cleaner technologies and practices, particularly in high-emission industries, are vital for addressing methane emissions.
+        - **Public Awareness and Behavioral Change**: 
+          Raising public awareness of the impacts of CO₂ emissions and encouraging sustainable lifestyle choices 
+          can help reduce individual and collective carbon footprints. Education campaigns are key in driving 
+          climate-friendly behavior.
 
-        - **Future Research**: 
-          Future research should focus on understanding the underlying causes of methane concentration spikes, 
-          including potential sources and mitigation strategies. Investigating the impact of weather patterns 
-          on methane levels could also provide valuable insights into managing emissions during specific conditions.
+        - **Adaptation and Resilience**: 
+          As global warming continues, it is essential to invest in climate adaptation strategies to enhance 
+          resilience, particularly in vulnerable regions. This includes infrastructure improvements, 
+          water resource management, and disaster preparedness.
 
     """)
 
@@ -85,15 +81,13 @@ def show_conclusion():
     st.subheader("Conclusion")
 
     st.write("""
-        In conclusion, the analysis of methane data collected in Pasadena, California, highlights the complex nature 
-        of methane emissions and their variability over time. As climate change continues to pose significant threats 
-        to our environment, understanding and addressing methane emissions is crucial. 
+        In conclusion, the analysis of global CO₂ emissions and temperature anomalies underscores the gravity 
+        of the climate crisis. The findings confirm the link between human activities and rising global temperatures, 
+        stressing the need for immediate and decisive action. 
 
-        This dashboard serves as a valuable tool for researchers, policymakers, and the community to engage with 
-        methane data and its implications. By fostering collaboration and knowledge-sharing, we can work together 
-        to develop effective strategies for mitigating methane emissions and their impacts on climate change.
+        This dashboard serves as a comprehensive tool for understanding emission trends and their impacts, offering 
+        valuable insights for researchers, policymakers, and the public. By fostering collaboration and informed decision-making, 
+        we can work towards a sustainable future and limit the worst impacts of climate change.
 
-        We hope this analysis has provided clarity and insights into methane dynamics, paving the way for 
-        informed decisions and actions toward a more sustainable future.
+        We hope this analysis empowers you to take part in the global effort to reduce emissions and promote climate resilience.
     """)
-
