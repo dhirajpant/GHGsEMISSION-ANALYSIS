@@ -12,7 +12,7 @@ page = st.sidebar.selectbox("Go to", ("Home", "Analysis", "Map", "Conclusion"))
 # Home Page
 if page == "Home":
     # Header and introductory content
-    st.header("Welcome to the CO₂ Emission & Temperature Anomaly Analysis Dashboard")
+    st.header("Welcome to the CO₂ Emission & Temperature Anomaly Analysis")
     
     st.write("""
         This dashboard offers insights into the global CO₂ emissions and temperature anomalies using historical and contemporary datasets. 
