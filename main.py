@@ -7,7 +7,7 @@ st.image("co2.png", caption="CO₂ Emission")
 
 # Sidebar for navigation with titles
 st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Go to", ("Home", "Analysis", "Map", "Conclusion"))
+page = st.sidebar.radio("Go to", ("Home", "Analysis", "Map", "Conclusion"))
 
 # Home Page
 if page == "Home":

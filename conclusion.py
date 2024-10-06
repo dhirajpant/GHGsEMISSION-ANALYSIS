@@ -86,19 +86,23 @@ def show_conclusion():
 
     st.write("""
         1. **Cumulative CO₂ Emissions**: Since 1970, global carbon emissions from fossil fuels have increased by about 90%. 
-           Emissions from fossil fuel combustion and industrial processes contribute about 78% of this increase.
+           The significant rise is largely due to fossil fuel combustion and industrial processes, which account for approximately 78% of this increase. 
+           This finding emphasizes the impact of industrial activities on climate change.
 
-        2. **Major Contributors**: The United States and China are the largest emitters, with the top 5 countries contributing 
-           approximately 57% of global cumulative CO₂ emissions.
+        2. **Major Contributors**: The United States and China are identified as the largest contributors to global CO₂ emissions, 
+           with the top five countries collectively accounting for around 57% of total emissions. 
+           This highlights the necessity of targeting these major emitters in climate policy discussions.
 
-        3. **Population vs. Emissions**: High-income countries with 16% of the population are responsible for 38% of global CO₂ emissions, 
-           while low-income countries with 9% of the population contribute only 0.5%.
+        3. **Population vs. Emissions**: Despite having only 16% of the global population, high-income countries are responsible for 38% 
+           of global CO₂ emissions. In contrast, low-income countries, which make up about 9% of the population, contribute a mere 0.5%. 
+           This disparity raises important questions about equity in climate responsibilities.
 
-        4. **Trends in Emissions**: Cumulative CO₂ emissions of the U.S. began to increase rapidly in the early 1900s, while China's 
-           emissions surged in the late 1900s.
+        4. **Trends in Emissions**: Historical data shows that U.S. CO₂ emissions began to rise sharply in the early 1900s, 
+           while China's emissions have surged since the late 1900s, reflecting rapid industrialization. 
+           This trend underscores the shift in emission sources over time.
 
-        5. **Ongoing Efforts**: Global initiatives, such as the Paris Agreement, are in place to reduce emissions, with countries committing 
-           to cleaner energy practices and technologies.
+        5. **Ongoing Efforts**: Global initiatives like the Paris Agreement aim to reduce emissions and foster cooperation among nations. 
+           Many countries are committing to cleaner energy practices and technologies, indicating a growing recognition of the need for sustainable development.
     """)
 
     # Conclusion
