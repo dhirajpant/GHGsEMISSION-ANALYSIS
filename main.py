@@ -7,7 +7,7 @@ st.image("co2.png", caption="CO₂ Emission")
 
 # Sidebar for navigation with titles
 st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Go to", ("Home", "Preprocessing", "Analysis", "Map", "Conclusion"))
+page = st.sidebar.selectbox("Go to", ("Home", "Analysis", "Map", "Conclusion"))
 
 # Home Page
 if page == "Home":
@@ -85,8 +85,3 @@ elif page == "Conclusion":
 elif page == "Map":
     import map  # Import the Map module
     map.show_map()  # Call the function to show the Map
-
-# Map Page
-elif page == "Preprocessing":
-    import preprocessing  # Import the Preprocessing module
-    preprocessing.show_preprocessing()# Call the function to show the Preprocessing
