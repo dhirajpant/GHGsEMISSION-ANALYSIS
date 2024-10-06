@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Set the title of the Streamlit app
-st.title("CO₂ Emission & Temperature Anomaly Analysis Dashboard")
+st.title("CO₂ Emission & Temperature Anomaly Analysis")
 st.image("co2.png", caption="CO₂ Emission")
 
 # Sidebar for navigation with titles
