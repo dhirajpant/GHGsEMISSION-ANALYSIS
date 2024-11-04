@@ -74,13 +74,16 @@ def run_analysis():
 
     # Write insights about the top 5 countries
     st.markdown("""
-        ### Key Insights: 
+        ### Key Insights:
         
-        - **Asia** is now the largest emitter of CO₂, with emissions accelerating post-1950 due to rapid economic growth.
-        - **North America and Europe** were early leaders in emissions but have seen a decline due to energy transitions and policies.
-        - **Africa and South America** contribute much less to global emissions, though their levels are slowly increasing.
-        - The overall trend shows a significant rise in global emissions post-1950, with Asia taking a dominant role in recent decades.
+        - **United States Dominance (Pre-2000)**: The U.S. was the dominant CO₂ emitter throughout the 19th and 20th centuries, with emissions peaking post-World War II due to industrial expansion.
+        - **China's Rapid Surge**: From the early 2000s, China's emissions have risen sharply, surpassing the U.S., and continuing to grow due to rapid industrialization.
+        - **Germany and the United Kingdom**: Both countries have seen stable or declining emissions post-1980s, reflecting efforts in deindustrialization and emissions reduction policies.
+        - **Russia**: Emissions have fluctuated but have not grown as sharply as the U.S. or China.
+        - **Global Exponential Growth**: Emissions have grown exponentially since the 1950s, primarily due to industrialization and population growth.
     """)
+
+
 
     st.markdown("### Regional CO₂ Emissions")
     # Display the first image for regional comparisons
@@ -90,23 +93,25 @@ def run_analysis():
     st.markdown("""
         ### Key Insights: 
         
-        - High-income countries historically led global emissions but are now reducing their output.
-        - Upper-middle-income countries, notably China, have become the primary source of global emissions, reflecting rapid industrialization.
-        - Low-income countries contribute very little to emissions despite their population size, showing disparities in emissions across income groups.
+        - **Asia** is now the largest emitter of CO₂, with emissions accelerating post-1950 due to rapid economic growth.
+        - **North America and Europe** were early leaders in emissions but have seen a decline due to energy transitions and policies.
+        - **Africa and South America** contribute much less to global emissions, though their levels are slowly increasing.
+        - The overall trend shows a significant rise in global emissions post-1950, with Asia taking a dominant role in recent decades.
     """)
+
+
     st.markdown("### CO₂ Emissions by Income Group")
+    
     # Display the second image for income-based comparison
     st.image("income status comparision.png", caption="CO₂ Emissions by Income Group")
 
     # Write insights for income-based comparison
     st.markdown("""
-        ### Key Insights:
+        ### Key Insights: 
         
-        - **United States Dominance (Pre-2000)**: The U.S. was the dominant CO₂ emitter throughout the 19th and 20th centuries, with emissions peaking post-World War II due to industrial expansion.
-        - **China's Rapid Surge**: From the early 2000s, China's emissions have risen sharply, surpassing the U.S., and continuing to grow due to rapid industrialization.
-        - **Germany and the United Kingdom**: Both countries have seen stable or declining emissions post-1980s, reflecting efforts in deindustrialization and emissions reduction policies.
-        - **Russia**: Emissions have fluctuated but have not grown as sharply as the U.S. or China.
-        - **Global Exponential Growth**: Emissions have grown exponentially since the 1950s, primarily due to industrialization and population growth.
+        - High-income countries historically led global emissions but are now reducing their output.
+        - Upper-middle-income countries, notably China, have become the primary source of global emissions, reflecting rapid industrialization.
+        - Low-income countries contribute very little to emissions despite their population size, showing disparities in emissions across income groups.
     """)
 
 # Call the function to run the analysis
